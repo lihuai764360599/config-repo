@@ -1,6 +1,11 @@
 spring:
   application:
     name: zuul
+  rabbitmq:
+    host: 192.168.48.131
+    port: 5672
+    username: admin
+    password: admin
     
 server:
   port: 3001
@@ -25,7 +30,7 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
 
-#当访问后台服务超过500毫秒没有成功，则执行降级代码
+#褰撹闂悗鍙版湇鍔¤秴杩�500姣娌℃湁鎴愬姛锛屽垯鎵ц闄嶇骇浠ｇ爜
 hystrix:
   command:
     default:
@@ -34,7 +39,7 @@ hystrix:
           thread:
             timeoutInMilliseconds: 500
 
-#暴露监控端点
+#鏆撮湶鐩戞帶绔偣
 management:
   endpoints:
     web:
